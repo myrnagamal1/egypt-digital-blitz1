@@ -1045,7 +1045,7 @@
         <!-- Rep Name -->
         <div class="lf-group">
           <label class="lf-label">Your Name <span class="lf-req">*</span></label>
-          <input id="lf-rep" type="text" class="lf-input" placeholder="Full name">
+          <input id="lf-rep" type="text" class="lf-input" placeholder="Full name" oninput="autoAssignSDE(this.value)">
         </div>
 
         <!-- Account Name -->
@@ -1148,7 +1148,7 @@
         </div>
 
         <!-- Assigned SDE (only shown when SDEs are configured) -->
-        <div class="lf-group" id="lf-sde-group" style="display:none;">
+        <div class="lf-group" id="lf-sde-group" style="display:none;" data-auto="true">
           <label class="lf-label">Assigned SDE <span class="lf-req">*</span></label>
           <select id="lf-sde" class="lf-input">
             <option value="">— Select SDE —</option>
