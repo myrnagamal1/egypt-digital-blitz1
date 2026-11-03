@@ -2294,7 +2294,7 @@ if (sessionStorage.getItem('dashUnlocked') === '1') {
 }
 
 function loadDashboard(manual = false) {
-  fetch(DASH_URL)
+  fetch(WEB_APP_URL)
     .then(r => r.json())
     .then(data => {
       const rows = data.rows || [];
