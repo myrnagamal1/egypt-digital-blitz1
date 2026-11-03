@@ -1557,7 +1557,7 @@ setInterval(loadLeaderboard, REFRESH_INTERVAL);
 
   async function subscribe() {
     try {
-      var reg = await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+      var reg = await navigator.serviceWorker.register('./sw.js');
       await navigator.serviceWorker.ready;
       var existing = await reg.pushManager.getSubscription();
       if (existing) { sendSub(existing); return; }
