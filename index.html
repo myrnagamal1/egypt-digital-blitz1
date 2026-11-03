@@ -1321,10 +1321,10 @@ function copyCampaignCode() {
           <div class="room-card">
             <div class="room-card-header">
               <div class="room-icon">🏢</div>
-              <div><div class="room-name">${r.room || r.name || ''}</div>${r.note ? `<div class="room-note">${r.note}</div>` : ''}</div>
+              <div><div class="room-name">${typeof r === 'object' ? (r.room || r.name || '') : String(r)}</div>${r.note ? `<div class="room-note">${r.note}</div>` : ''}</div>
             </div>
-            <div class="room-partner">${r.partner || ''}</div>
-            <div class="room-partner-sub">${r.sub || 'All day'}</div>
+            <div class="room-partner">${typeof r === 'object' ? (r.partner || '') : ''}</div>
+            <div class="room-partner-sub">${typeof r === 'object' ? (r.sub || 'All day') : 'All day'}</div>
           </div>`).join('')}
       </div>`).join('');
   }
@@ -2553,8 +2553,8 @@ function renderAeTab(partner) {
 </div>
 
 
-<div id="global-sound-banner" style="position:fixed;bottom:24px;right:24px;z-index:99999;background:linear-gradient(135deg,#8B5CF6,#0099a8);color:#fff;padding:12px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(139,92,246,0.5);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;animation:pulse-glow 2s ease-in-out infinite;" onclick="enableSound()"><span style="font-size:20px;">🔈</span><span>Tap to Enable Sound</span></div>
-<style>@keyframes pulse-glow{0%,100%{box-shadow:0 4px 20px rgba(139,92,246,0.5);}50%{box-shadow:0 4px 32px rgba(139,92,246,0.9);}}</style>
+<div id="global-sound-banner" style="position:fixed;bottom:24px;right:24px;z-index:99999;background:linear-gradient(135deg,#8B5CF6,#0099a8);color:#fff;padding:12px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(123,79,191,0.5);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;animation:pulse-glow 2s ease-in-out infinite;" onclick="enableSound()"><span style="font-size:20px;">🔈</span><span>Tap to Enable Sound</span></div>
+<style>@keyframes pulse-glow{0%,100%{box-shadow:0 4px 20px rgba(123,79,191,0.5);}50%{box-shadow:0 4px 32px rgba(139,92,246,0.9);}}</style>
 
 <a id="feedback-btn" href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=bGf3QlX0PEKC9twtmXka94nFoPZVc1JIvuT7QpRvY8xUM1VZOTM4VFhNTzNHRFdCSTdMNzJPOUdXTy4u" target="_blank" rel="noopener" style="position:fixed;bottom:24px;left:24px;z-index:99998;background:linear-gradient(135deg,#C4187A,#e6a800);color:#000;padding:12px 20px;border-radius:50px;box-shadow:0 4px 20px rgba(196,24,122,0.5);cursor:pointer;display:flex;align-items:center;gap:10px;font-weight:700;font-size:14px;text-decoration:none;animation:pulse-glow-gold 2s ease-in-out infinite;"><span style="font-size:20px;">&#x1F4DD;</span><span>Share Feedback</span></a>
 <style>@keyframes pulse-glow-gold{0%,100%{box-shadow:0 4px 20px rgba(196,24,122,0.5);}50%{box-shadow:0 4px 32px rgba(196,24,122,0.9);}}
