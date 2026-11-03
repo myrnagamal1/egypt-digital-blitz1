@@ -4,8 +4,8 @@ self.addEventListener('push', function(event) {
   var title = data.title || 'Blitz Notification';
   var options = {
     body: data.body || '',
-    icon: '/favicon.ico',
-    badge: '/favicon.ico',
+    icon: '/egypt-digital-blitz1/favicon.ico',
+    badge: '/egypt-digital-blitz1/favicon.ico',
     tag: data.tag || 'blitz',
     renotify: true,
     data: data
@@ -15,5 +15,5 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   event.notification.close();
-  event.waitUntil(clients.openWindow(self.location.origin + '/'));
+  event.waitUntil(clients.openWindow('https://myrnagamal1.github.io/egypt-digital-blitz1/'));
 });
